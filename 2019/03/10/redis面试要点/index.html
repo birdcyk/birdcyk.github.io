@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储 数据都保存在内存中，因此操作速度快。 支持事务 单进程单线程，通过队列的方式来解决多线程同时操作redis。Redis集群">
+    <meta name="description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储">
 <meta name="keywords" content="redis,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis面试要点">
 <meta property="og:url" content="http://yoursite.com/2019/03/10/redis面试要点/index.html">
 <meta property="og:site_name" content="24-7的博客">
-<meta property="og:description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储 数据都保存在内存中，因此操作速度快。 支持事务 单进程单线程，通过队列的方式来解决多线程同时操作redis。Redis集群">
+<meta property="og:description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-10T05:40:01.864Z">
+<meta property="og:updated_time" content="2019-03-10T05:45:16.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis面试要点">
-<meta name="twitter:description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储 数据都保存在内存中，因此操作速度快。 支持事务 单进程单线程，通过队列的方式来解决多线程同时操作redis。Redis集群">
+<meta name="twitter:description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储">
 
 
 
@@ -167,11 +167,10 @@
         <div class="content">
             <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
 <li>支持多种类型的数据，string hash set list</li>
-<li>数据容量容量收到物理内存的限制，不能进行海量数据存储</li>
+<li>数据容量容量收到物理内存的限制，不能进行海量数据存储<a id="more"></a></li>
 <li>数据都保存在内存中，因此操作速度快。</li>
 <li>支持事务</li>
-<li>单进程单线程，通过队列的方式来解决多线程同时操作redis。<h2 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h2><a id="more"></a>
-主从概念。至少三台redis 才能组成一个集群，因为集群是通过选举机制来确认主从关系。</li>
+<li>单进程单线程，通过队列的方式来解决多线程同时操作redis。<h2 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h2>主从概念。至少三台redis 才能组成一个集群，因为集群是通过选举机制来确认主从关系。</li>
 </ol>
 <p>在集群中，可以通过主redis进行些操作，从的负责查操作。</p>
 <p>集群同步： 是通过心跳包的方式，一段时间进行数据同步一次。</p>
@@ -254,28 +253,23 @@
         <div class="buttons is-centered">
             
                 
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/gallery/images/alipay.jpg" alt="Alipay"></div>
+</a>
 
                 
                 
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/gallery/images/wepay.jpg" alt="Wechat"></div>
+</a>
 
                 
         </div>
@@ -285,6 +279,27 @@
 
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comentarios</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'QXKsqWxb2BgoWIBzKBvGUNwB-gzGzoHsz',
+        app_key: 'cWXEP42meom4AiLlLmbJ1eC4',
+        placeholder: '说点什么吧!'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
