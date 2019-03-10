@@ -2,22 +2,23 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Categorias - 24-7的博客</title>
+<title>redis面试要点 - 24-7的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="他日江湖重逢,再当杯酒言欢.">
+    <meta name="description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储 数据都保存在内存中，因此操作速度快。 支持事务 单进程单线程，通过队列的方式来解决多线程同时操作redis。Redis集群">
 <meta name="keywords" content="redis,面试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="24-7的博客">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis面试要点">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/redis面试要点/index.html">
 <meta property="og:site_name" content="24-7的博客">
-<meta property="og:description" content="他日江湖重逢,再当杯酒言欢.">
+<meta property="og:description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储 数据都保存在内存中，因此操作速度快。 支持事务 单进程单线程，通过队列的方式来解决多线程同时操作redis。Redis集群">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-10T05:40:01.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="24-7的博客">
-<meta name="twitter:description" content="他日江湖重逢,再当杯酒言欢.">
+<meta name="twitter:title" content="redis面试要点">
+<meta name="twitter:description" content="特点 支持多种类型的数据，string hash set list 数据容量容量收到物理内存的限制，不能进行海量数据存储 数据都保存在内存中，因此操作速度快。 支持事务 单进程单线程，通过队列的方式来解决多线程同时操作redis。Redis集群">
 
 
 
@@ -89,7 +90,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="24-7的博客" height="28">
+                <img src="/images/logo.svg" alt="redis面试要点" height="28">
             
             </a>
         </div>
@@ -101,7 +102,7 @@
                 
                 <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item is-active" href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
                 <a class="navbar-item" href="/tags">标签</a>
                 
@@ -111,6 +112,10 @@
             
             <div class="navbar-end">
                 
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
                 
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
@@ -125,27 +130,162 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/mianshi.jpg" alt="redis面试要点">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-10T05:24:58.000Z">2019-03-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java面试/">java面试</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1788 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                redis面试要点
+            
+        </h1>
+        <div class="content">
+            <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>支持多种类型的数据，string hash set list</li>
+<li>数据容量容量收到物理内存的限制，不能进行海量数据存储</li>
+<li>数据都保存在内存中，因此操作速度快。</li>
+<li>支持事务</li>
+<li>单进程单线程，通过队列的方式来解决多线程同时操作redis。<h2 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h2><a id="more"></a>
+主从概念。至少三台redis 才能组成一个集群，因为集群是通过选举机制来确认主从关系。</li>
+</ol>
+<p>在集群中，可以通过主redis进行些操作，从的负责查操作。</p>
+<p>集群同步： 是通过心跳包的方式，一段时间进行数据同步一次。</p>
+<h2 id="Redis的持久化"><a href="#Redis的持久化" class="headerlink" title="Redis的持久化"></a>Redis的持久化</h2><h3 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h3><ul>
+<li><p>原理:</p>
+<p>  RDB 是通过fork子进程，将数据写入临时文件，在最终的时候将临时文件覆盖掉备份文件，用二进制压缩存储。</p>
+</li>
+<li><p>优点</p>
+<ol>
+<li>RDB 方式只会有一个备份文件，恢复容易</li>
+<li>RDB fork子进程对数据进行备份，效率最大化，避免了服务进程的IO读写的效率</li>
+<li>RDB 相对于AOF 来说， 如果数据集很大，RDB的启动效率会更高</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<ol>
+<li>RDB 属于定时持久化，在持久化之前出现拓机等问题，会造成部分数据无法恢复的问题。</li>
+<li>由于RDB是通过fork子进程来协助完成数据持久化工作的，因此，如果当数据集较大时，可能会导致整个服务器停止服务几百毫秒(可以理解为在fork子进程执行的时候，阻塞了服务进程)<h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3></li>
+</ol>
+</li>
+<li><p>原理</p>
+<p>  AOF 是对删除更新写入操作以日志的形似记录，查询的操作不会被记录。以文本的方式记录，可以打开文件看到详细的操作记录</p>
+</li>
+<li><p>优点</p>
+<ol>
+<li>数据记录格式清晰，易于理解。</li>
+<li>数据记录是通过追加的方式，每次的记录会append后面。</li>
+<li>AOF 三种策略，每秒同步，每次修改同步与不同步。<br> 这种同步机制，可以很少的避免拓机带来的大量数据丢失问题。每秒同步策略是异步的。</li>
+<li>特殊情况说明，如果说在同步到一半的时候拓机，在恢复的之前，可通过redis-check-aof工具来帮助我们解决数据 一致性的问题。只会造成少量数据损失。<br>与RDB 一点不同的是，每次都会修改都会被同步。而RDB只会在同步的时候，对最终数据进行同步。</li>
+</ol>
+</li>
+<li><p>缺点</p>
+<p>  对于相同数量的数据集而言，AOF文件通常要大于RDB文件。RDB 在恢复大数据集时的速度比 AOF 的恢复速度要快</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>二者选择的标准，就是看系统是愿意牺牲一些性能，换取更高的缓存一致性（aof），还是愿意写操作频繁的时候，不启用备份来换取更高的性能，待手动运行save的时候，再做备份（rdb）。rdb这个就更有些 eventually consistent的意思了</p>
+</li>
+</ul>
+<h2 id="Redis-与-memcache的区别"><a href="#Redis-与-memcache的区别" class="headerlink" title="Redis 与 memcache的区别"></a>Redis 与 memcache的区别</h2><ol>
+<li>memcache 把数据也是放在内存中，如果出现宕机或者断电，数据不可恢复。Redis可持久化到硬盘</li>
+<li>memcache只支持简单的string类型，而redis支持丰富的数据类型。</li>
+<li>设置value值大小不同，redis最大可以达到1GB，而memcache只有1MB<h2 id="案例场景分析"><a href="#案例场景分析" class="headerlink" title="案例场景分析"></a>案例场景分析</h2>MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据<br>相关知识：redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。redis 提供 6种数据淘汰策略：<br>voltile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰<br>volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰<br>volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰<br>allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰<br>allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰<br>no-enviction（驱逐）：禁止驱逐数据</li>
+</ol>
+<h2 id="redis分布式锁"><a href="#redis分布式锁" class="headerlink" title="redis分布式锁"></a>redis分布式锁</h2><p>主要是通过redis提供的setNX来实现，不存在则放入。</p>
+<h2 id="如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？"><a href="#如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？" class="headerlink" title="如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？"></a>如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？</h2><p>会造成redis阻塞，命令执行完毕才会恢复。这个时候可以使用scan指令，scan指令可以无阻塞的提取出指定模式的key列表，但是会有一定的重复概率，在客户端做一次去重就可以了，但是整体所花费的时间会比直接用keys指令长。</p>
+<h2 id="如果有大量的key需要设置同一时间过期，一般需要注意什么"><a href="#如果有大量的key需要设置同一时间过期，一般需要注意什么" class="headerlink" title="如果有大量的key需要设置同一时间过期，一般需要注意什么"></a>如果有大量的key需要设置同一时间过期，一般需要注意什么</h2><p>如果大量的key过期时间设置的过于集中，到过期的那个时间点，redis可能会出现短暂的卡顿现象。一般需要在时间上加一个随机值，使得过期时间分散一些</p>
+<h2 id="Redis的容灾策略"><a href="#Redis的容灾策略" class="headerlink" title="Redis的容灾策略"></a>Redis的容灾策略</h2><ol>
+<li>开启主从备份</li>
+<li>master上不开启任何备份，在slave上开启备份。</li>
+<li>master挂掉只后，修改slave为master</li>
+</ol>
+<h2 id="Redis的高级进阶"><a href="#Redis的高级进阶" class="headerlink" title="Redis的高级进阶"></a>Redis的高级进阶</h2><ol>
+<li>读写分离<br> 在master上只做写操作，slave上只做读的操作。 slave上可以拓展，读性能可达到线性提升。</li>
+<li>主从热备<br> 在读写分离模式中，保证稳定性，可以使用两台master做主从热备，保证数据的安全性</li>
+<li>redis数据分片。<br> 每一台机器都可以看做时一个master，每台机器只根据规则保存一类值。且每台机器都看做时一个master与多个slave</li>
+</ol>
+<h2 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h2><p>通过multi命令来开启事务，随后的一系列操作都会被添加到事务队列中，直到执行了exec才会开始执行事务。 同时也可以通过discard来清空事务队列，取消事务的执行。</p>
+<p>若在事务执行exec操作之前，其他值发生了变化？<br> 可以通过watch指令，来观察一组值，然后开启事务，若在watch之后，exec之前被watch的键发生了变化，则会取消事务的执行。</p>
+<h2 id="Redis-SetNX为什么能实现分布式锁"><a href="#Redis-SetNX为什么能实现分布式锁" class="headerlink" title="Redis SetNX为什么能实现分布式锁"></a>Redis SetNX为什么能实现分布式锁</h2><p>因为Redis是单进程单线程的，它能够保证操作的原子性与有序性。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/redis/">redis</a>, <a class="has-link-grey -link" href="/tags/面试/">面试</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categorias
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/java面试/">
-            <span class="level-start">
-                <span class="level-item">java面试</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li>
-            </ul>
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
         </div>
     </div>
-</div></div>
+</div>
+
+
+
+
+</div>
                 
 
 
@@ -251,6 +391,77 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catálogo
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#特点">
+        <span class="has-mr-6">1</span>
+        <span>特点</span>
+        </a></li><li>
+        <a class="is-flex" href="#Redis集群">
+        <span class="has-mr-6">2</span>
+        <span>Redis集群</span>
+        </a></li><li>
+        <a class="is-flex" href="#Redis的持久化">
+        <span class="has-mr-6">3</span>
+        <span>Redis的持久化</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#RDB">
+        <span class="has-mr-6">3.1</span>
+        <span>RDB</span>
+        </a></li><li>
+        <a class="is-flex" href="#AOF">
+        <span class="has-mr-6">3.2</span>
+        <span>AOF</span>
+        </a></li><li>
+        <a class="is-flex" href="#总结">
+        <span class="has-mr-6">3.3</span>
+        <span>总结</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Redis-与-memcache的区别">
+        <span class="has-mr-6">4</span>
+        <span>Redis 与 memcache的区别</span>
+        </a></li><li>
+        <a class="is-flex" href="#案例场景分析">
+        <span class="has-mr-6">5</span>
+        <span>案例场景分析</span>
+        </a></li><li>
+        <a class="is-flex" href="#redis分布式锁">
+        <span class="has-mr-6">6</span>
+        <span>redis分布式锁</span>
+        </a></li><li>
+        <a class="is-flex" href="#如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？">
+        <span class="has-mr-6">7</span>
+        <span>如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？</span>
+        </a></li><li>
+        <a class="is-flex" href="#如果有大量的key需要设置同一时间过期，一般需要注意什么">
+        <span class="has-mr-6">8</span>
+        <span>如果有大量的key需要设置同一时间过期，一般需要注意什么</span>
+        </a></li><li>
+        <a class="is-flex" href="#Redis的容灾策略">
+        <span class="has-mr-6">9</span>
+        <span>Redis的容灾策略</span>
+        </a></li><li>
+        <a class="is-flex" href="#Redis的高级进阶">
+        <span class="has-mr-6">10</span>
+        <span>Redis的高级进阶</span>
+        </a></li><li>
+        <a class="is-flex" href="#Redis事务">
+        <span class="has-mr-6">11</span>
+        <span>Redis事务</span>
+        </a></li><li>
+        <a class="is-flex" href="#Redis-SetNX为什么能实现分布式锁">
+        <span class="has-mr-6">12</span>
+        <span>Redis SetNX为什么能实现分布式锁</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -512,7 +723,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="24-7的博客" height="28">
+                    <img src="/images/logo.svg" alt="redis面试要点" height="28">
                 
                 </a>
                 <p class="is-size-7">
